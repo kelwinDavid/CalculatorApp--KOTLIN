@@ -33,30 +33,33 @@ class MainActivity : AppCompatActivity() {
             viewModel.digitPressed((v as Button).text.toString())
         }
 
-        binding.button0.setOnClickListener(newNumberListener)
-        binding.button1.setOnClickListener(newNumberListener)
-        binding.button2.setOnClickListener(newNumberListener)
-        binding.button3.setOnClickListener(newNumberListener)
-        binding.button4.setOnClickListener(newNumberListener)
-        binding.button5.setOnClickListener(newNumberListener)
-        binding.button6.setOnClickListener(newNumberListener)
-        binding.button7.setOnClickListener(newNumberListener)
-        binding.button8.setOnClickListener(newNumberListener)
-        binding.button9.setOnClickListener(newNumberListener)
-        binding.buttonDot.setOnClickListener(newNumberListener)
+        binding.apply {
+            button0.setOnClickListener(newNumberListener)
+            button1.setOnClickListener(newNumberListener)
+            button2.setOnClickListener(newNumberListener)
+            button3.setOnClickListener(newNumberListener)
+            button4.setOnClickListener(newNumberListener)
+            button5.setOnClickListener(newNumberListener)
+            button6.setOnClickListener(newNumberListener)
+            button7.setOnClickListener(newNumberListener)
+            button8.setOnClickListener(newNumberListener)
+            button9.setOnClickListener(newNumberListener)
+            buttonDot.setOnClickListener(newNumberListener)
+        }
 
         val operationListener = View.OnClickListener { v ->
             viewModel.operandPressed((v as Button).text.toString())
         }
 
-        binding.buttonAddition.setOnClickListener(operationListener)
-        binding.buttonSubstract.setOnClickListener(operationListener)
-        binding.buttonDivide.setOnClickListener(operationListener)
-        binding.buttonProduct.setOnClickListener(operationListener)
-        binding.buttonEquals.setOnClickListener(operationListener)
-
-        binding.buttonNeg?.setOnClickListener {
-            viewModel.negPressed()
+        binding.apply{
+            buttonAddition.setOnClickListener(operationListener)
+            buttonSubstract.setOnClickListener(operationListener)
+            buttonDivide.setOnClickListener(operationListener)
+            buttonProduct.setOnClickListener(operationListener)
+            buttonEquals.setOnClickListener(operationListener)
+            buttonNeg?.setOnClickListener {
+                viewModel.negPressed()
+            }
         }
 
     }
